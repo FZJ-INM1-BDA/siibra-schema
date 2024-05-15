@@ -24,7 +24,7 @@ jobs:
         path:  siibra-configurations
         fetch-depth: 1
         clean: True
-        ref: ${{ inputs.use-cfg }}
+        ref: ${{ inputs.use-cfg || 'expmt_attr' }}
     - run: |
         pip install -r requirements.txt
     - run: |
