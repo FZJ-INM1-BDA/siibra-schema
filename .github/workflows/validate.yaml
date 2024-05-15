@@ -11,6 +11,8 @@ on:
         default: 'expmt_attr'
 jobs:
   validate:
+    runs-on: ubuntu-latest
+    steps:
     - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
