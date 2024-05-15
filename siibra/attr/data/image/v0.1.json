@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "siibra/attr/data/image/v0.1"
+        },
+        "format": {
+            "$ref": "#/definitions/format"
+        },
+        "fetcher": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "@type",
+        "format",
+        "fetcher"
+    ],
+    "definitions": {
+        "format": {
+            "oneOf": [
+                {
+                    "const": "neuroglancer/precomputed"
+                },
+                {
+                    "const": "nii"
+                }
+            ]
+        }
+    },
+    "additionalProperties": false
+}

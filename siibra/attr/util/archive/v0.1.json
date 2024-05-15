@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "archive_type": {
+            "$ref": "#/definitions/archive_type"
+        },
+        "archive_file": {
+            "type": "string"
+        }
+    },
+    "definitions": {
+        "archive_type": {
+            "oneOf": [
+                {
+                    "const": "tar.gz"
+                },
+                {
+                    "const": "tar"
+                },
+                {
+                    "const": "zip"
+                }
+            ]
+        }
+    }
+}

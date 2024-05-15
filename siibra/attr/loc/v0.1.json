@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "allOf": [
+        {
+            "$ref": "urn:siibra-local:siibra/attr/util/has_space_id/v0.1.json"
+        },
+        {
+            "oneOf": [
+                {
+                    "$ref": "urn:siibra-local:siibra/attr/loc/layerboundary/v0.1.json"
+                },
+                {
+                    "$ref": "urn:siibra-local:siibra/attr/loc/pointcloud/v0.1.json"
+                },
+                {
+                    "$ref": "urn:siibra-local:siibra/attr/loc/point/v0.1.json"
+                }
+            ]
+        }
+    ]
+}

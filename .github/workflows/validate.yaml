@@ -1,0 +1,29 @@
+name: '[validate] json schema validation'
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      use-cfg:
+        description: "branch of siibra-configuration to be checkout"
+        required: false
+        type: string
+        default: 'expmt_attr'
+jobs:
+  validate:
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+      with:
+        repository: FZJ-INM1-BDA/siibra-configurations
+        path:  siibra-configurations
+        fetch-depth: 1
+        clean: True
+        ref: ${{ inputs.use-cfg }}
+    - run: |
+        pip install -r requirements.txt
+    - run: |
+        python code/validate.py ./siibra-configurations/features/

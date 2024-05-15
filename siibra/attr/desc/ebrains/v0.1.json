@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "siibra/attr/desc/ebrains/v0.1"
+        },
+        "ids": {
+            "type": "object",
+            "patternProperties": {
+                "^.+$": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "required": [
+        "ids",
+        "@type"
+    ]
+}

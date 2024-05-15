@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "siibra/attr/loc/point/v0.1"
+        },
+        "coordinate": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "minLength": 3,
+            "maxLength": 3
+        }
+    }
+}

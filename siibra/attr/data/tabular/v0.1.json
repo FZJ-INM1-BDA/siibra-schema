@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "siibra/attr/data/tabular/v0.1"
+        },
+        "format": {
+            "$ref": "#/definitions/format"
+        },
+        "parse_options": {
+            "$ref": "#/definitions/parse_options"
+        },
+        "plot_options": {
+            "$ref": "#/definitions/plot_options"
+        }
+    },
+    "required": [
+        "@type",
+        "format"
+    ],
+    "definitions": {
+        "format": {
+            "anyOf": [
+                {
+                    "const": "csv"
+                }
+            ]
+        },
+        "parse_options": {
+            "type": "object",
+            "description": "Passed directly to [pandas.read_csv](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) as keyword arguments"
+        },
+        "plot_options": {
+            "type": "object",
+            "description": "Passed directly to [pandas.DataFrame.plot](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html) as keyword arguments"
+        }
+    }
+}
