@@ -13,6 +13,9 @@
         },
         "key": {
             "type": "string"
+        },
+        "space_id": {
+            "type": "string"
         }
     },
     "required": [

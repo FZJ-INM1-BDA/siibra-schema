@@ -14,6 +14,9 @@
                 },
                 {
                     "$ref": "urn:siibra-local:siibra/attr/loc/point/v0.1.json"
+                },
+                {
+                    "$ref": "urn:siibra-local:siibra/attr/loc/boundingbox/v0.1.json"
                 }
             ]
         }

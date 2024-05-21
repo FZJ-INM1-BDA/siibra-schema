@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "siibra/attr/loc/boundingbox/v0.1"
+        },
+        "minpoint": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "minLength": 3,
+            "maxLength": 3
+        },
+        "maxpoint": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "minLength": 3,
+            "maxLength": 3
+        }
+    }
+}
