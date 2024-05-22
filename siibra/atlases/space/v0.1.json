@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "siibra/atlases/space/v0.1"
+        },
+        "name": {
+            "type": "string"
+        },
+        "attributes": {
+            "type": "array",
+            "items": {
+                "$ref": "urn:siibra-local:siibra/attr/v0.1.json"
+            }
+        }
+    },
+    "additionalProperties": false
+}
