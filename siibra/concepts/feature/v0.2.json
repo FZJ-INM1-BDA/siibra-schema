@@ -5,9 +5,6 @@
         "@type": {
             "const": "siibra/concepts/feature/v0.2"
         },
-        "name": {
-            "type": "string"
-        },
         "attributes": {
             "type": "array",
             "items": {
