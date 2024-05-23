@@ -11,9 +11,6 @@
         "url": {
             "type": "string"
         },
-        "key": {
-            "type": "string"
-        },
         "space_id": {
             "type": "string"
         }
@@ -30,10 +27,18 @@
                     "const": "neuroglancer/precomputed"
                 },
                 {
+                    "const": "neuroglancer/precompmesh"
+                },
+                {
                     "const": "nii"
+                },
+                {
+                    "const": "gii-mesh"
+                },
+                {
+                    "const": "gii-label"
                 }
             ]
         }
-    },
-    "additionalProperties": false
+    }
 }

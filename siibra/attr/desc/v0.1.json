@@ -15,6 +15,9 @@
         },
         {
             "$ref": "urn:siibra-local:siibra/attr/desc/speciesspec/v0.1.json"
+        },
+        {
+            "$ref": "urn:siibra-local:siibra/attr/desc/id/v0.1.json"
         }
     ]
 }

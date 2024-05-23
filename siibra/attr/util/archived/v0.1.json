@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "archive_options": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/archive"
+                },
+                {
+                    "$ref": "#/definitions/segment"
+                }
+            ]
+        }
+    },
+    "definitions": {
+        "archive": {
+            "file": {
+                "type": "string"
+            }
+        },
+        "segment": {
+            "label": {
+                "type": "number"
+            }
+        }
+    }
+}
