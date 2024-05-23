@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "siibra/atlases/parcellation/v0.1"
+        },
+        "regions": {
+            "type": "array",
+            "items": { "$ref": "urn:siibra-local:siibra/atlases/region/v0.1.json" }
+        },
+        "attributes": {
+            "type": "array",
+            "items": {
+                "$ref": "urn:siibra-local:siibra/attr/v0.1.json"
+            }
+        }
+    },
+    "required": [
+        "@type",
+        "regions"
+    ],
+    "additionalProperties": false
+}
