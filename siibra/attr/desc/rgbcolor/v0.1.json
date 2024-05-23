@@ -8,13 +8,12 @@
     ],
     "properties": {
         "@type": {
-            "const": "siibra/attr/desc/url/v0.1"
+            "const": "siibra/attr/desc/rgbcolor/v0.1"
         },
-        "text": {
-            "type": "string"
+        "value": {
+            "type": "string",
+            "pattern": "#[0-9a-fA-F]{6}"
         }
     },
-    "required": [
-        "@type"
-    ]
+    "required": ["@type"]
 }

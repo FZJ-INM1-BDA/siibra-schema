@@ -8,13 +8,13 @@
     ],
     "properties": {
         "@type": {
-            "const": "siibra/attr/desc/url/v0.1"
+            "const": "siibra/attr/desc/version/v0.1"
         },
-        "text": {
+        "prev_id": {
+            "type": "string"
+        },
+        "next_id": {
             "type": "string"
         }
-    },
-    "required": [
-        "@type"
-    ]
+    }
 }

@@ -8,13 +8,8 @@
     ],
     "properties": {
         "@type": {
-            "const": "siibra/attr/desc/url/v0.1"
-        },
-        "text": {
-            "type": "string"
+            "const": "siibra/attr/desc/doi/v0.1"
         }
     },
-    "required": [
-        "@type"
-    ]
+    "required": ["@type"]
 }

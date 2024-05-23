@@ -19,7 +19,7 @@ logger.addHandler(StreamHandler())
 
 ROOT_DIR = os.path.abspath(f"{os.path.dirname(os.path.realpath(__file__))}/..")
 
-skip_path = ("venv", )
+skip_path = ("venv", "maps")
 
 skip_types = (
     "siibra/feature/timeseries/activity/v0.1",
@@ -95,10 +95,10 @@ def main(dir_to_validate: str=None, *args, debug=False):
     result = []
     for dirpath, dirnames, filenames in os.walk(dir_to_validate):
         for filename in filenames:
+            path_to_file = Path(dirpath) / filename
             if not filename.endswith(".json"):
                 logger.debug(f"Skipping {path_to_file} because it does not end in .json")
                 continue
-            path_to_file = Path(dirpath) / filename
             logger.debug(f"Processing {path_to_file}")
             result.append(
                 validate_json(str(path_to_file), jsonschema_reg, fail_fast=False)

@@ -27,9 +27,6 @@ jobs:
         ref: ${{ inputs.use-cfg || 'refactor_attr' }}
     - run: |
         pip install -r requirements.txt
-    - name: "Validate features"
+    - name: "Validate"
       run: |
-        python code/validate.py ./siibra-configurations/features/
-    - name: "Validate spaces"
-      run: |
-        python code/validate.py ./siibra-configurations/spaces/
+        python code/validate.py ./siibra-configurations/

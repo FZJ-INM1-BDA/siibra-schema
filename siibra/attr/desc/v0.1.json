@@ -18,6 +18,18 @@
         },
         {
             "$ref": "urn:siibra-local:siibra/attr/desc/id/v0.1.json"
+        },
+        {
+            "$ref": "urn:siibra-local:siibra/attr/desc/doi/v0.1.json"
+        },
+        {
+            "$ref": "urn:siibra-local:siibra/attr/desc/url/v0.1.json"
+        },
+        {
+            "$ref": "urn:siibra-local:siibra/attr/desc/rgbcolor/v0.1.json"
+        },
+        {
+            "$ref": "urn:siibra-local:siibra/attr/desc/version/v0.1.json"
         }
     ]
 }
