@@ -8,7 +8,7 @@ on:
         description: "branch of siibra-configuration to be checkout"
         required: false
         type: string
-        default: 'expmt_attr'
+        default: 'refactor_attr'
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
         path:  siibra-configurations
         fetch-depth: 1
         clean: True
-        ref: ${{ inputs.use-cfg || 'expmt_attr' }}
+        ref: ${{ inputs.use-cfg || 'refactor_attr' }}
     - run: |
         pip install -r requirements.txt
     - name: "Validate features"
