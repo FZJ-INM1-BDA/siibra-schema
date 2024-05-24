@@ -30,6 +30,12 @@
         },
         {
             "$ref": "urn:siibra-local:siibra/attr/desc/version/v0.1.json"
+        },
+        {
+            "$ref": "urn:siibra-local:siibra/attr/desc/license/v0.1.json"
+        },
+        {
+            "$ref": "urn:siibra-local:siibra/attr/desc/description/v0.1.json"
         }
     ]
 }
