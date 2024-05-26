@@ -5,9 +5,6 @@
         "@type": {
             "const": "siibra/atlases/space/v0.1"
         },
-        "name": {
-            "type": "string"
-        },
         "attributes": {
             "type": "array",
             "items": {
