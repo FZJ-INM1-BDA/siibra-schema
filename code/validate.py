@@ -12,19 +12,21 @@ class ValidationResult(Enum):
     SKIPPED = "SKIPPED"
     PASSED = "PASSED"
     FAILED = "FAILED"
-    
+
+
 logger = getLogger(__name__)
 logger.setLevel(INFO)
 logger.addHandler(StreamHandler())
 
 ROOT_DIR = os.path.abspath(f"{os.path.dirname(os.path.realpath(__file__))}/..")
 
-skip_path = ("venv", "maps")
+skip_path = ("venv", "siibra-configurations/maps")
 
 skip_types = (
     "siibra/feature/timeseries/activity/v0.1",
     "siibra/feature/connectivitymatrix/v0.3",
 )
+
 
 def populate_jsonschema_reg():
     registry = referencing.Registry()
@@ -33,14 +35,15 @@ def populate_jsonschema_reg():
         for filename in filenames:
             if not filename.endswith(".json"):
                 continue
-            
+
             filepath = Path(dirpath) / filename
             with open(filepath, "r") as fp:
                 uri = f"urn:siibra-local:{str(filepath.relative_to(ROOT_DIR))}"
                 resource = referencing.Resource.from_contents(json.load(fp=fp))
                 registry = registry.with_resource(uri=uri, resource=resource)
-    
+
     return registry
+
 
 def validate_json(path_to_json, registry, fail_fast=False):
     if any([path_fragment in path_to_json for path_fragment in skip_path]):
@@ -81,34 +84,40 @@ def validate_json(path_to_json, registry, fail_fast=False):
         return (path_to_json, ValidationResult.FAILED, e)
     return (path_to_json, ValidationResult.PASSED, None)
 
-def main(dir_to_validate: str=None, *args, debug=False):
-    
+
+def main(dir_to_validate: str = None, *args, debug=False):
+
     if debug:
         logger.setLevel(DEBUG)
-    
+
     jsonschema_reg = populate_jsonschema_reg()
     # resolver = jsonschema_reg.resolver()
 
     if dir_to_validate is None:
-        raise RuntimeError(f"pass the directory that needs to validated")
-    
+        raise RuntimeError("pass the directory that needs to validated")
+
     result = []
     for dirpath, dirnames, filenames in os.walk(dir_to_validate):
         for filename in filenames:
             path_to_file = Path(dirpath) / filename
             if not filename.endswith(".json"):
-                logger.debug(f"Skipping {path_to_file} because it does not end in .json")
+                logger.debug(
+                    f"Skipping {path_to_file} because it does not end in .json"
+                )
                 continue
             logger.debug(f"Processing {path_to_file}")
             result.append(
-                validate_json(str(path_to_file), jsonschema_reg, fail_fast=False)
+                validate_json(str(path_to_file),
+                              jsonschema_reg,
+                              fail_fast=False)
             )
-    
+
     passed = [r for r in result if r[1] == ValidationResult.PASSED]
     failed = [r for r in result if r[1] == ValidationResult.FAILED]
     skipped = [r for r in result if r[1] == ValidationResult.SKIPPED]
     print(
-        f"Validation results: PASSED: {len(passed)} SKIPPED: {len(skipped)} FAILED: {len(failed)}"
+        f"Validation results: PASSED: {len(passed)} SKIPPED:"
+        f"{len(skipped)} FAILED: {len(failed)}"
     )
 
     if len(failed) > 0:
@@ -117,7 +126,6 @@ def main(dir_to_validate: str=None, *args, debug=False):
         raise ValidationError(
             message="\n-----\n".join([f"{f[0]}: {str(f[2])}" for f in failed])
         )
-            
 
 
 if __name__ == "__main__":
