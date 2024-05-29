@@ -8,10 +8,7 @@
     ],
     "properties": {
         "@type": {
-            "const": "siibra/attr/desc/regionspec/v0.1"
-        },
-        "parcellation_id": {
-            "type": "string"
+            "const": "siibra/attr/desc/paradigm/v0.1"
         }
     },
     "required": ["@type"]

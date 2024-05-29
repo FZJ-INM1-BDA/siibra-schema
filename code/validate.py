@@ -24,7 +24,7 @@ skip_path = ("venv", "siibra-configurations/maps")
 
 skip_types = (
     "siibra/feature/timeseries/activity/v0.1",
-    "siibra/feature/connectivitymatrix/v0.3",
+    # "siibra/feature/connectivitymatrix/v0.3",
 )
 
 
