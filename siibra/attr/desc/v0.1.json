@@ -42,6 +42,9 @@
         },
         {
             "$ref": "urn:siibra-local:siibra/attr/desc/paradigm/v0.1.json"
+        },
+        {
+            "$ref": "urn:siibra-local:siibra/attr/desc/aggregateby/v0.1.json"
         }
     ]
 }

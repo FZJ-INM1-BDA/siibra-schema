@@ -3,7 +3,14 @@
     "type": "object",
     "properties": {
         "space_id": {
-            "type": "string"
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ]
         }
     },
     "required": ["space_id"]
