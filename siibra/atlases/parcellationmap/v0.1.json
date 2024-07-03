@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "@type": {
+            "const": "siibra/atlases/parcellation_map/v0.1"
+        },
+        "maptype": {
+            "type": "string",
+            "enum": [
+                "labelled",
+                "statistical"
+            ]
+        },
+        "sparsemap": {
+            "type": "boolean"
+        },
+        "parcellation_id": {
+            "type": "string"
+        },
+        "space_id": {
+            "type": "string"
+        },
+        "extra_spec": {
+            "type": "string"
+        },
+        "attributes": {
+            "type": "array",
+            "items": {
+                "$ref": "urn:siibra-local:siibra/attr/v0.1.json"
+            }
+        },
+        "region_attributes": {
+            "type": "object",
+            "attributes": {
+                "type": "array",
+                "items": {
+                    "$ref": "urn:siibra-local:siibra/attr/v0.1.json"
+                }
+            },
+            "required": [
+                "attributes"
+            ]
+        }
+    },
+    "required": [
+        "@type",
+        "maptype",
+        "parcellation_id",
+        "space_id",
+        "region_attributes"
+    ],
+    "additionalProperties": false
+}
