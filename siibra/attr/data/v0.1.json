@@ -19,9 +19,6 @@
                 },
                 {
                     "$ref": "urn:siibra-local:siibra/attr/data/tabular/v0.1.json"
-                },
-                {
-                    "$ref": "urn:siibra-local:siibra/attr/data/archive/v0.1.json"
                 }
             ]
         }

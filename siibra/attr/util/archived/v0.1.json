@@ -17,6 +17,9 @@
         "archive": {
             "type": "object",
             "properties": {
+                "format": {
+                    "$ref": "#/definitions/archive_type"
+                },
                 "file": {
                     "type": "string"
                 }
@@ -29,6 +32,19 @@
                     "type": "number"
                 }
             }
+        },
+        "archive_type": {
+            "oneOf": [
+                {
+                    "const": "tar.gz"
+                },
+                {
+                    "const": "tar"
+                },
+                {
+                    "const": "zip"
+                }
+            ]
         }
     }
 }
