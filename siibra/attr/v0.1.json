@@ -1,17 +1,24 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "oneOf": [
+    "allOf": [
         {
-            "$ref": "urn:siibra-local:siibra/attr/data/v0.1.json"
+            "$ref": "urn:siibra-local:siibra/attr/util/facet/v0.1.json"
         },
         {
-            "$ref": "urn:siibra-local:siibra/attr/desc/v0.1.json"
-        },
-        {
-            "$ref": "urn:siibra-local:siibra/attr/loc/v0.1.json"
-        },
-        {
-            "$ref": "urn:siibra-local:siibra/attr/extra/v0.1.json"
+            "oneOf": [
+                {
+                    "$ref": "urn:siibra-local:siibra/attr/data/v0.1.json"
+                },
+                {
+                    "$ref": "urn:siibra-local:siibra/attr/desc/v0.1.json"
+                },
+                {
+                    "$ref": "urn:siibra-local:siibra/attr/loc/v0.1.json"
+                },
+                {
+                    "$ref": "urn:siibra-local:siibra/attr/extra/v0.1.json"
+                }
+            ]
         }
     ]
 }

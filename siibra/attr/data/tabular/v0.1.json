@@ -36,7 +36,28 @@
         },
         "plot_options": {
             "type": "object",
-            "description": "Passed directly to [pandas.DataFrame.plot](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html) as keyword arguments"
+            "description": "Passed directly to [pandas.DataFrame.plot](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html) as keyword arguments. If any of the following key is present, the corresponding plot method will be used, with the (dictionary) values passed as keyword arguments: 'scatter': `DataFrame.plot.scatter`, 'matrix': `nilearn.plotting.plot_matrix` ",
+            "examples": [
+                {
+                    "scatter": {
+                        "x": "x",
+                        "y": "y",
+                        "c": "layer",
+                        "s": 0.2
+                    }
+                },
+                {
+                    "matrix": {}
+                },
+                {
+                    "kind": "bar",
+                    "yerr": "density (sd)",
+                    "xlabel": "receptor",
+                    "ylabel": "density (fmol/mg protein)",
+                    "grid": true,
+                    "legend": false
+                }
+            ]
         }
     }
 }
