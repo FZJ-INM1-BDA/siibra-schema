@@ -20,7 +20,7 @@ logger.addHandler(StreamHandler())
 
 ROOT_DIR = os.path.abspath(f"{os.path.dirname(os.path.realpath(__file__))}/..")
 
-skip_path = ("venv", "siibra-configurations/maps")
+skip_path = ("venv",)
 
 skip_types = (
     "siibra/feature/timeseries/activity/v0.1",

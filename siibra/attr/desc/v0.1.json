@@ -38,13 +38,7 @@
             "$ref": "urn:siibra-local:siibra/attr/desc/description/v0.1.json"
         },
         {
-            "$ref": "urn:siibra-local:siibra/attr/desc/cohort/v0.1.json"
-        },
-        {
-            "$ref": "urn:siibra-local:siibra/attr/desc/paradigm/v0.1.json"
-        },
-        {
-            "$ref": "urn:siibra-local:siibra/attr/desc/aggregateby/v0.1.json"
+            "$ref": "urn:siibra-local:siibra/attr/desc/facet/v0.1.json"
         }
     ]
 }

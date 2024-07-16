@@ -18,6 +18,9 @@
                     "$ref": "urn:siibra-local:siibra/attr/data/image/v0.1.json"
                 },
                 {
+                    "$ref": "urn:siibra-local:siibra/attr/data/mesh/v0.1.json"
+                },
+                {
                     "$ref": "urn:siibra-local:siibra/attr/data/tabular/v0.1.json"
                 }
             ]

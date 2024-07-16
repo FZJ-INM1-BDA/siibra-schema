@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "urn:siibra-local:siibra/attr/data/_volume_base/v0.1.json"
+        }
+    ],
+    "properties": {
+        "@type": {
+            "const": "siibra/attr/data/mesh/v0.1"
+        },
+        "format": {
+            "$ref": "#/definitions/format"
+        }
+    },
+    "required": [
+        "@type",
+        "format",
+        "url"
+    ],
+    "definitions": {
+        "format": {
+            "oneOf": [
+                {
+                    "const": "neuroglancer/precompmesh"
+                },
+                {
+                    "const": "gii-mesh"
+                },
+                {
+                    "const": "gii-label"
+                },
+                {
+                    "const": "freesurfer-annot"
+                }
+            ]
+        }
+    }
+}

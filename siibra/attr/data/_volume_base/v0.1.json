@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "url": {
+            "type": "string"
+        },
+        "space_id": {
+            "type": "string"
+        },
+        "colormap": {
+            "$ref": "#/definitions/colormap"
+        },
+        "mapping": {
+            "type": "object",
+            "patternProperties": {
+                ".+": {
+                    "$ref": "#/definitions/mappingValue"
+                }
+            }
+        }
+    },
+    "required": [
+        "url"
+    ],
+    "definitions": {
+        "format": {
+            "oneOf": [
+                {
+                    "const": "neuroglancer/precomputed"
+                },
+                {
+                    "const": "neuroglancer/precompmesh"
+                },
+                {
+                    "const": "nii"
+                },
+                {
+                    "const": "gii-mesh"
+                },
+                {
+                    "const": "gii-label"
+                }
+            ]
+        },
+        "colormap": {
+            "oneOf": [
+                {
+                    "const": "magma"
+                }
+            ]
+        },
+        "mappingValue": {
+            "type": "object",
+            "properties": {
+                "range": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "color": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

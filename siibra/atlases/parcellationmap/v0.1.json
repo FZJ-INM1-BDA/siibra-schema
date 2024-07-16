@@ -3,7 +3,7 @@
     "type": "object",
     "properties": {
         "@type": {
-            "const": "siibra/atlases/parcellation_map/v0.1"
+            "const": "siibra/atlases/parcellationmap/v0.1"
         },
         "maptype": {
             "type": "string",
@@ -29,26 +29,13 @@
             "items": {
                 "$ref": "urn:siibra-local:siibra/attr/v0.1.json"
             }
-        },
-        "region_attributes": {
-            "type": "object",
-            "attributes": {
-                "type": "array",
-                "items": {
-                    "$ref": "urn:siibra-local:siibra/attr/v0.1.json"
-                }
-            },
-            "required": [
-                "attributes"
-            ]
         }
     },
     "required": [
         "@type",
         "maptype",
         "parcellation_id",
-        "space_id",
-        "region_attributes"
+        "space_id"
     ],
     "additionalProperties": false
 }
