@@ -24,25 +24,6 @@
         "url"
     ],
     "definitions": {
-        "format": {
-            "oneOf": [
-                {
-                    "const": "neuroglancer/precomputed"
-                },
-                {
-                    "const": "neuroglancer/precompmesh"
-                },
-                {
-                    "const": "nii"
-                },
-                {
-                    "const": "gii-mesh"
-                },
-                {
-                    "const": "gii-label"
-                }
-            ]
-        },
         "colormap": {
             "oneOf": [
                 {

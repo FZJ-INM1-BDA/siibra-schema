@@ -9,6 +9,9 @@
     "properties": {
         "@type": {
             "const": "siibra/attr/desc/modality/v0.1"
+        },
+        "category": {
+            "type": "string"
         }
     },
     "required": ["@type"]
