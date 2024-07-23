@@ -22,10 +22,7 @@ ROOT_DIR = os.path.abspath(f"{os.path.dirname(os.path.realpath(__file__))}/..")
 
 skip_path = ("venv",)
 
-skip_types = (
-    "siibra/feature/timeseries/activity/v0.1",
-    # "siibra/feature/connectivitymatrix/v0.3",
-)
+skip_types = tuple()
 
 
 def populate_jsonschema_reg():

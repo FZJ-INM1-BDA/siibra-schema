@@ -3,7 +3,7 @@
     "type": "object",
     "properties": {
         "archive_options": {
-            "allOf": [
+            "oneOf": [
                 {
                     "$ref": "#/definitions/archive"
                 },
@@ -23,7 +23,8 @@
                 "file": {
                     "type": "string"
                 }
-            }
+            },
+            "required": ["format", "file"]
         },
         "segment": {
             "type": "object",
@@ -31,7 +32,8 @@
                 "label": {
                     "type": "number"
                 }
-            }
+            },
+            "required": ["label"]
         },
         "archive_type": {
             "oneOf": [
