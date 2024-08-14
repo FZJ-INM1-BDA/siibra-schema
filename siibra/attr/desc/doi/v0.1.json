@@ -9,6 +9,10 @@
     "properties": {
         "@type": {
             "const": "siibra/attr/desc/doi/v0.1"
+        },
+        "value": {
+            "type": "string",
+            "pattern": "^https:\\/\\/doi\\.org"
         }
     },
     "required": ["@type"]
