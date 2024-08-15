@@ -3,7 +3,7 @@
     "type": "object",
     "properties": {
         "@type": {
-            "const": "siibra/atlases/parcellation/v0.1"
+            "const": "siibra/atlases/parcellationscheme/v0.1"
         },
         "regions": {
             "type": "array",
