@@ -4,12 +4,12 @@
     "description": "Use this attribute to signify that this attribute collection can and should be indexed with this property.",
     "examples": [
         {
-            "@type": "siibra/attr/desc/facet/v0.1",
+            "@type": "siibra/attr/desc/categorization/v0.1",
             "key": "BigBrain section",
             "value": "0015"
         },
         {
-            "@type": "siibra/attr/desc/facet/v0.1",
+            "@type": "siibra/attr/desc/categorization/v0.1",
             "key": "BigBrain section",
             "value": "0020"
         }
@@ -21,7 +21,7 @@
     ],
     "properties": {
         "@type": {
-            "const": "siibra/attr/desc/facet/v0.1"
+            "const": "siibra/attr/desc/categorization/v0.1"
         },
         "key": {
             "type": "string"
