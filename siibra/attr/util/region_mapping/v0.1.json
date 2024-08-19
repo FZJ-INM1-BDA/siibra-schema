@@ -1,0 +1,143 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "patternProperties": {
+        "^.*$": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/region-mapping-target"
+            }
+        }
+    },
+    "description": "Describes how a subset of regions in a parcellation scheme connects to other attributes. At the moment, labelled volume mapping, statistical volume linking, and csv/row-index can be described. \n\nPlease note that this schema is not meant to be standalone, as the parcellation_id is deliberately not included. The parent node should contain parcellation_id.",
+    "examples": [
+        {
+            "Area 45 (IFG) - left hemisphere": [
+                {
+                    "@type": "volume/ref",
+                    "label": 1,
+                    "target": "Left hemisphere volume of Julich Brain 3.0.3 in ICBM 152 space",
+                    "color": "#A76792"
+                }
+            ]
+        },
+        {
+            "Area 45 (IFG) - left hemisphere": [
+                {
+                    "@type": "volume/ref",
+                    "range": [0, 0.98],
+                    "target": "Statistical map of Area 45 (IFG) - left hemisphere in ICBM 152 space"
+                }
+            ]
+        },
+        {
+            "Component 3: Calcarine cortex posterior": [
+                {
+                    "@type": "volume/ref",
+                    "subspace":  [
+                        ":",
+                        ":",
+                        ":",
+                        2
+                    ],
+                    "range": [],
+                    "target": "DiFuMo Atlas (64 dimensions) on MNI 152 ICBM 2009c Nonlinear Asymmetric - statistical - 32 regions"
+                }
+            ]
+        },
+        {
+            "Area 45 (IFG) - left hemisphere": [
+                {
+                    "@type": "csv/row-index",
+                    "index": 0
+                }
+            ]
+        }
+    ],
+    "definitions": {
+        "target_protocol": {
+            "type": "object",
+            "properties": {
+                "target": {
+                    "type": "string"
+                }
+            }
+        },
+        "region-mapping-target": {
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/target_protocol"
+                }
+            ],
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/volume"
+                },
+                {
+                    "$ref": "#/definitions/row-index"
+                }
+            ]
+        },
+        "volume": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "label": {
+                            "type": "number"
+                        },
+                        "color": {
+                            "type": "string",
+                            "pattern": "#[a-fA-F0-9]{6}"
+                        }
+                    },
+                    "required": ["label"]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "range": {
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            }
+                        },
+                        "subspace": {
+                            "type": "array",
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "const": ":"
+                                    },
+                                    {
+                                        "type": "number"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "required": ["range"]
+                }
+            ],
+            "properties": {
+                "@type": {
+                    "const": "volume/ref"
+                }
+            },
+            "required": ["@type"]
+        },
+        "row-index": {
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "const": "csv/row-index"
+                },
+                "index": {
+                    "type": "number"
+                }
+            }
+        }
+    }
+}

@@ -39,6 +39,9 @@
         },
         {
             "$ref": "urn:siibra-local:siibra/attr/desc/categorization/v0.1.json"
+        },
+        {
+            "$ref": "urn:siibra-local:siibra/attr/desc/attribute_mapping/v0.1.json"
         }
     ]
 }

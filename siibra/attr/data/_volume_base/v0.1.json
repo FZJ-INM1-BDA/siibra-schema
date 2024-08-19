@@ -10,14 +10,6 @@
         },
         "colormap": {
             "$ref": "#/definitions/colormap"
-        },
-        "mapping": {
-            "type": "object",
-            "patternProperties": {
-                ".+": {
-                    "$ref": "#/definitions/mappingValue"
-                }
-            }
         }
     },
     "required": [
@@ -30,24 +22,6 @@
                     "const": "magma"
                 }
             ]
-        },
-        "mappingValue": {
-            "type": "object",
-            "properties": {
-                "range": {
-                    "type": "array",
-                    "items": {
-                        "type": "number"
-                    }
-                },
-                "color": {
-                    "type": "string"
-                },
-                "label": {
-                    "type": "number"
-                }
-            },
-            "additionalProperties": false
         }
     }
 }

@@ -29,13 +29,17 @@
             "items": {
                 "$ref": "urn:siibra-local:siibra/attr/v0.1.json"
             }
+        },
+        "region_mapping": {
+            "$ref": "urn:siibra-local:siibra/attr/util/region_mapping/v0.1.json"
         }
     },
     "required": [
         "@type",
         "maptype",
         "parcellation_id",
-        "space_id"
+        "space_id",
+        "region_mapping"
     ],
     "additionalProperties": false
 }
