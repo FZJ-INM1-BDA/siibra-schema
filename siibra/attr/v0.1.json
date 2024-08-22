@@ -6,9 +6,6 @@
             "properties": {
                 "name": {
                     "type": "string"
-                },
-                "id": {
-                    "type": "string"
                 }
             }
         },

@@ -10,9 +10,12 @@
                 },
                 "region_mapping": {
                     "$ref": "urn:siibra-local:siibra/attr/util/region_mapping/v0.1.json"
+                },
+                "@type": {
+                    "const": "siibra/attr/desc/attribute_mapping/v0.1"
                 }
             },
-            "required": ["parcellation_id", "region_mapping"],
+            "required": ["parcellation_id", "region_mapping", "@type"],
             "additionalProperties": false
         },
         {
@@ -23,8 +26,13 @@
                 },
                 "refs": {
                     "$ref": "#/definitions/ebrainsref_mapping"
+                },
+                "@type": {
+                    "const": "siibra/attr/desc/attribute_mapping/v0.1"
                 }
-            }
+            },
+            "required": ["ref_type", "refs", "@type"],
+            "additionalProperties": false
         }
     ],
     "properties": {
@@ -110,19 +118,14 @@
         },
         "ebrainsref_mapping": {
             "type": "object",
-            "properties": {
-                "refs": {
-                    "type": "object",
-                    "patternProperties": {
-                        "^[0-9a-f-]+$": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "target": {
-                                        "type": "string"
-                                    }
-                                }
+            "patternProperties": {
+                "^[0-9a-f-]+$": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "target": {
+                                "type": "string"
                             }
                         }
                     }
