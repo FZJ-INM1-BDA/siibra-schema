@@ -75,6 +75,9 @@
                     "$ref": "#/definitions/volume"
                 },
                 {
+                    "$ref": "#/definitions/row-col-index"
+                },
+                {
                     "$ref": "#/definitions/row-index"
                 },
                 {
@@ -136,6 +139,17 @@
             "properties": {
                 "@type": {
                     "const": "csv/row-index"
+                },
+                "index": {
+                    "type": "number"
+                }
+            }
+        },
+        "row-col-index": {
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "const": "csv/row-col-index"
                 },
                 "index": {
                     "type": "number"
