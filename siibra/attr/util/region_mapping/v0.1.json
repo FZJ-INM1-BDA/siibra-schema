@@ -76,6 +76,9 @@
                 },
                 {
                     "$ref": "#/definitions/row-index"
+                },
+                {
+                    "$ref": "#/definitions/col-index"
                 }
             ]
         },
@@ -133,6 +136,17 @@
             "properties": {
                 "@type": {
                     "const": "csv/row-index"
+                },
+                "index": {
+                    "type": "number"
+                }
+            }
+        },
+        "col-index": {
+            "type": "object",
+            "properties": {
+                "@type": {
+                    "const": "csv/col-index"
                 },
                 "index": {
                     "type": "number"
